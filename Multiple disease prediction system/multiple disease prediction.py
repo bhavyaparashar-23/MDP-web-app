@@ -9,16 +9,13 @@ st.set_page_config(page_title="Health Assistant",
                    page_icon="🧑‍⚕️")
 
     
-# getting the working directory of the main.py
-working_dir = os.path.dirname(os.path.abspath(__file__))
+from pathlib import Path
 
-# loading the saved models
+BASE = Path(__file__).parent
 
-diabetes_model = pickle.load(open('C:/Users/paras/OneDrive/Desktop/Multiple disease prediction system/saved models/diabetes_model.sav', 'rb'))
-
-heart_disease_model = pickle.load(open('C:/Users/paras/OneDrive/Desktop/Multiple disease prediction system/saved models/heart_disease_model.sav', 'rb'))
-
-parkinsons_model = pickle.load(open('C:/Users/paras/OneDrive/Desktop/Multiple disease prediction system/saved models/parkinsons_model.sav', 'rb'))
+diabetes_model = pickle.load(open(BASE / 'saved models' / 'diabetes_model.sav', 'rb'))
+heart_disease_model = pickle.load(open(BASE / 'saved models' / 'heart_disease_model.sav', 'rb'))
+parkinsons_model = pickle.load(open(BASE / 'saved models' / 'parkinsons_model.sav', 'rb'))
 
 # sidebar for navigation
 with st.sidebar:
