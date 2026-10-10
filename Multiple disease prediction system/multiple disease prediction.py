@@ -2,6 +2,7 @@ import os
 import pickle
 import streamlit as st
 from streamlit_option_menu import option_menu
+from pathlib import Path
 
 # Set page configuration
 st.set_page_config(page_title="Health Assistant",
@@ -9,7 +10,7 @@ st.set_page_config(page_title="Health Assistant",
                    page_icon="🧑‍⚕️")
 
     
-from pathlib import Path
+
 
 BASE = Path(__file__).parent
 
